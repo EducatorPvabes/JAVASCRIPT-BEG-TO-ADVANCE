@@ -121,3 +121,64 @@ console.log(typeof bigNumber); // Output: bigint
 // Function
 
 // Object
+
+let student = {
+    name: "Anjali",
+    age: 22,
+    isPassed: true
+};
+console.log(student);
+console.log(typeof student); // Output: object
+
+console.log(student.name); // Accessing property
+console.log(student.age);
+console.log(student.isPassed);  
+
+// Array
+let marks = [85, 90, 78, 92,56];
+console.log(marks);
+console.log(typeof marks); // Output: object (Arrays are a type of object in JavaScript)
+console.log(marks[0]); // Accessing first element
+console.log(marks[1]); // Accessing second element
+console.log(marks.length); // Getting the length of the array
+
+// Function > Function is a block of reusable code.
+function greet() {
+    console.log("Hello, welcome to JavaScript!");
+}
+greet(); // Calling the function
+console.log(typeof greet); // Output: function
+
+// Function with Parameters 
+//syntax
+// function functionName(parameter1, parameter2) {
+//     // code to run
+// }
+
+function add(a, b) {
+    return a + b; // Return the sum of a and b
+}
+let sum = add(5, 10); // Calling the function with arguments
+console.log(sum); // Output: 15 
+
+
+function showMarks(marks) {
+    console.log("Marks: " + marks);
+}
+showMarks([85, 90, 78]); // Passing an array as an argument
+
+
+function add(a, b) {
+    console.log(a + b);
+}
+
+add(10, 20);
+ 
+//Onject
+let person= {
+    name: "Rohit",
+    age: 25,
+    city: "Delhi"
+};
+console.log(person);
+console.log(typeof person); // Output: object
