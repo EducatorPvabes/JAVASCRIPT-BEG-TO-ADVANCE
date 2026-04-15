@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>innerHTML with Template Literals</title>
+</head>
+<body>
+
+    <h2>📊 Student Result</h2>
+
+    <p id="result">Click button to see result</p>
+
+    <button onclick="showResult()">Show Result</button>
+
+    <script>
+        function showResult() {
+
+            let name = "Rahul";
+            let marks = 85;
+
+            let resultBox = document.getElementById("result");
+
+            // Using template literals (`) and ${}
+            resultBox.innerHTML = `
+                <h3>Student: ${name}</h3>
+                <p>Marks: ${marks}</p>
+                <p style="color:green;"><b>Status: Pass ✅</b></p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

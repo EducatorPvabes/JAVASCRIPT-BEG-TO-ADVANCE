@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello World!</h1>
+    <button onclick="add()">Add Item</button>
+    <script>
+        let el = document.getElementById("heading");
+        console.log(el);
+        el.innerText = "Welcome to JavaScript DOM!";
+        el.style.color = "red";
+        el.style.fontSize = "24px";
+
+        function add() {
+            let newEl = document.createElement("p");
+            newEl.innerText = "This is a new paragraph.";
+            document.body.appendChild(newEl);
+             newEl.remove();
+        }
+      //  newEl.remove();
+    </script>
+
+</body>
+</html>

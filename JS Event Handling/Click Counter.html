@@ -1,0 +1,39 @@
+<!-- //event handling in JavaScript allows you to execute code in response 
+// to user interactions or other events.
+//in simple terms, it allows you to make your web pages interactive by 
+responding to user actions such as clicks, mouse movements, keyboard input, and more.
+//in javascript, you can use event listeners to listen for specific events on 
+//elements and execute a function when that event occurs.
+//what is event listener?
+//An event listener is a function that waits for a specific event to occur
+// on an element and executes a block of code when that event happens.
+//event listeners can be added to various elements such as buttons, links, input fields, and even the entire document.
+//common events include click, mouseover, keydown, submit, and many more. 
+// In this example, we will create a simple click counter that increments a count each 
+time a button is clicked and updates the display accordingly. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Counter</title>
+</head>
+<body>
+
+    <h2>Click Counter</h2>
+    <button id="btn">Click Me</button>
+    <p>Total Clicks: <span id="count">0</span></p>
+
+    <script>
+        let count = 0;
+
+        const button = document.getElementById("btn");
+        const display = document.getElementById("count");
+
+        button.addEventListener("click", function() {
+            count++; // update state
+            display.textContent = count; // update UI
+        });
+    </script>
+
+</body>
+</html>

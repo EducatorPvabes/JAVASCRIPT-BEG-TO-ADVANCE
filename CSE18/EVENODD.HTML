@@ -1,0 +1,85 @@
+ <!-- Create a webpage where:
+	A user enters a number 
+	Using JavaScript, display whether the number is even or odd 
+	Also print numbers from 1 to that number using a loop -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even Odd Checker + Loop</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Even or Odd + Number Printing</h2>
+
+    <!-- Input -->
+    <input type="number" id="number" placeholder="Enter a number">
+    <br>
+
+    <!-- Button -->
+    <button onclick="checkNumber()">Check</button>
+
+    <!-- Output -->
+    <div class="result" id="output"></div>
+
+    <script>
+        function checkNumber() {
+
+            // Step 1: Get value
+            let value = document.getElementById("number").value;
+
+            // Step 2: Validation
+            if (value === "") {
+                document.getElementById("output").innerHTML = "⚠️ Please enter a number!";
+                return;
+            }
+
+            let num = Number(value);
+
+            // Step 3: Even / Odd check
+            let result = "";
+            if (num % 2 === 0) {
+                result = num + " is EVEN";
+            } else {
+                result = num + " is ODD";
+            }
+
+            // Step 4: Loop from 1 to N
+            let numbers = "";
+            for (let i = 1; i <= num; i++) {
+                numbers += i + " ";
+            }
+
+            // Step 5: Display output
+            document.getElementById("output").innerHTML = `
+                <b>${result}</b><br><br>
+                Numbers from 1 to ${num}: <br>
+                ${numbers}
+            `;
+        }
+    </script>
+
+</body>
+</html>

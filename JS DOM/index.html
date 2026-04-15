@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript DOM Examples</title>
+
+<style>
+
+body{
+font-family: Arial;
+padding:20px;
+}
+
+.box{
+border:2px solid black;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+margin:5px;
+padding:6px 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>JavaScript DOM Practice</h1>
+
+<!-- Example 1 -->
+<div class="box">
+<h2>1. getElementById Example</h2>
+
+<p id="demoText">This text will change</p>
+
+<button onclick="changeText()">Change Text</button>
+
+</div>
+
+
+<!-- Example 2 -->
+
+<div class="box">
+<h2>2. querySelector Example</h2>
+
+<p class="colorText">Click button to change color</p>
+
+<button onclick="changeColor()">Change Color</button>
+
+</div>
+
+
+
+<!-- Example 3 -->
+
+<div class="box">
+
+<h2>3. Input Value Read</h2>
+
+<input type="text" id="nameInput" placeholder="Enter your name">
+
+<button onclick="showName()">Show Name</button>
+
+<p id="result"></p>
+
+</div>
+
+
+
+<!-- Example 4 -->
+
+<div class="box">
+
+<h2>4. Create Element Example</h2>
+
+<button onclick="addItem()">Add List Item</button>
+
+<ul id="list"></ul>
+
+</div>
+
+
+
+<!-- Example 5 -->
+
+<div class="box">
+
+<h2>5. Remove Element Example</h2>
+
+<p id="removeMe">This text will be removed.(first)</p>
+
+<p id="removeMe2">This text will be removed (second)</p>
+<button onclick="removeText()">Remove Text</button>
+
+</div>
+
+
+
+<!-- Example 6 -->
+
+<div class="box">
+
+<h2>6. querySelectorAll Example</h2>
+
+<p class="multi">Item 1</p>
+<p class="multi">Item 2</p>
+<p class="multi">Item 3</p>
+
+<button onclick="changeAll()">Change All Text</button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
