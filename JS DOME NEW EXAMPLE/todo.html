@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do App</title>
+</head>
+<body>
+
+<h2>To-Do List</h2>
+
+<input id="taskInput" placeholder="Enter task">
+<button id="addBtn">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+let input = document.getElementById("taskInput");
+let addBtn = document.getElementById("addBtn");
+let list = document.getElementById("taskList");
+
+function addTask() {
+    if (input.value === "") return;
+// in the above line, we are checking if the input field is empty. 
+// If it is, we simply return from the function without doing anything.
+//  This prevents us from adding empty tasks to the list.
+
+    let li = document.createElement("li");
+    li.innerText = input.value;
+    // We create a new <li> element and set its inner text to the value of the input field.
+       // This will display the task that the user has entered. 
+
+    let delBtn = document.createElement("button");
+    delBtn.innerText = "Delete";
+// We create a new <button> element and set its inner text to "Delete".
+    // This button will be used to delete the task from the list when clicked.
+    // We then add an onclick event listener to the delete button.
+    //  When the button is clicked, it will execute a function that removes the corresponding <li> element from the list.
+    delBtn.onclick = function() {
+        li.remove();
+    };
+// Finally, we append the delete button to the <li> element and then append the <li> element to the task list.
+    li.appendChild(delBtn);
+    list.appendChild(li);
+    // After adding the task to the list, we clear the input field by setting its value to an empty string.
+    // This allows the user to enter a new task without having to manually clear the input field.
+    // This is a common practice in to-do list applications to improve user experience.
+
+    input.value = "";
+}
+// We also add an event listener to the input field to listen for the "Enter" key press.
+// When the user presses the "Enter" key while the input field is focused, it will trigger the addTask function, allowing the user to quickly add tasks without having to click the "Add" button.
+// This enhances the usability of the application by providing a convenient keyboard shortcut for adding tasks.
+addBtn.onclick = addTask;
+// We also add an event listener to the input field to listen for the "Enter" key press.
+// When the user presses the "Enter" key while the input field is focused, it will trigger the addTask function, allowing the user to quickly add tasks without having to click the "Add" button.
+// This enhances the usability of the application by providing a convenient keyboard shortcut for adding tasks.
+// We also add an event listener to the input field to listen for the "Enter" key press.
+// When the user presses the "Enter" key while the input field is focused, it will trigger the addTask function, allowing the user to quickly add tasks without having to click the "Add" button.
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") addTask();
+});
+
+
+</script>
+
+</body>
+</html>

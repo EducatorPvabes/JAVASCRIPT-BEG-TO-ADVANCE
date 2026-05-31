@@ -8,6 +8,12 @@ for (let i = 1; i <= 5; i++) {
 
 console.log("Sum of first 5 natural numbers:", sum); // 15
 
+// question: print even numbers from 1 to 10 using for loop
+console.log("Even numbers from 1 to 10:");
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }   
 
 // while loop example
 // SYNTAX: while (condition) { }
@@ -19,6 +25,17 @@ while (count <= 5) {
 }
 console.log("Final Count:", count); // 6
 
+// question: print odd numbers from 1 to 10 using while loop
+
+console.log("Odd numbers from 1 to 10:");
+let oddCount = 1;
+while (oddCount <= 10) {
+    if (oddCount % 2 !== 0) {
+        console.log(oddCount);
+    }
+    oddCount++;
+}
+
 // do...while loop example
 // SYNTAX: do { } while (condition)
 // do...while loop is used when we want the loop to execute at least once
@@ -29,6 +46,17 @@ do {
 }
 while (num <= 5);
 console.log("Final Number:", num); // 6
+
+// question: print numbers from 1 to 5 using do...while loop
+console.log("Numbers from 1 to 5:");
+let number = 1;
+do {
+    console.log(number);
+    number++;
+}
+while (number <= 5);
+
+
 
 // for...of loop example
 // SYNTAX: for (let variable of array) { }

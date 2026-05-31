@@ -1,52 +1,62 @@
-// Selecting elements
+// 🔹 Selecting elements from HTML
 let heading = document.getElementById("heading");
 let input = document.getElementById("inputText");
 let para = document.getElementById("para");
 
-// Change Heading
-document.getElementById("changeTextBtn").onclick = 
-function() {
+
+// 🔹 1. Change Heading Text when button is clicked
+// onclick runs function when button is clicked
+document.getElementById("changeTextBtn").onclick =
+ function () {
+    // innerText changes the text of heading
     heading.innerText = input.value;
-    //innerText is used to change the text content of an element.
-// Change Event
-input.onchange = function() {
+};
+
+
+// 🔹 2. Input Change Event
+// onchange runs when user changes input and clicks outside
+input.onchange = function () {
     console.log("Input changed:", input.value);
 };
 
-// Change Background Color
 document.getElementById("bgColorBtn").
- addEventListener("click", function() {
+addEventListener("click", function () {
     document.body.style.backgroundColor = "lightblue";
+    document.body.style.fontFamily = "Arial"; // change font family to Arial
 });
-
-// Change Font Size
+ 
+// 🔹 4. Change Font Size of Heading
 document.getElementById("fontSizeBtn").
-addEventListener("click", function() {
+addEventListener("click", function () {
     heading.style.fontSize = "40px";
 });
 
-// Show/Hide Paragraph
+
+// 🔹 5. Show / Hide Paragraph
 let isVisible = true;
-document.getElementById("toggleParaBtn").
-onclick = function() {
+
+document.getElementById("toggleParaBtn").onclick = 
+function () {
     if (isVisible) {
-        para.style.display = "none";
+        heading.style.color = "blue"; // change heading color to blue when hiding paragraph
+        para.style.display = "none";   // hide
         isVisible = false;
     } else {
-        para.style.display = "block";
+        heading.style.color = "black"; // change heading color back to black when showing paragraph
+        para.style.display = "block";  // show
         isVisible = true;
     }
 };
 
-// Reset Page
-document.getElementById("resetBtn").
-onclick = function() {
-    location.reload();
+
+// 🔹 6. Reset Page
+document.getElementById("resetBtn").onclick = 
+function () {
+    location.reload(); // reloads the page
 };
 
-// Mouse Over Event
-heading.onmouseover = function() {
-    heading.style.color = "blue";
-};
 
-  
+// 🔹 7. Mouse Over Event (hover on heading)
+heading.onmouseover = function () {
+    heading.style.color = "red";
+};

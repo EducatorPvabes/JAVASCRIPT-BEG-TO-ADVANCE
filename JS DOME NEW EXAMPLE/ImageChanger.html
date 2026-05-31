@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Switcher</title>
+</head>
+<body>
+
+    <h2>Image Switcher Example</h2>
+
+    <!-- Existing Image -->
+    <img id="myImage" 
+         src="https://via.placeholder.com/200/0000FF/FFFFFF?text=Image+1" 
+         width="200">
+
+    <br><br>
+
+    <!-- Button to switch image -->
+    <button onclick="changeImage()">Switch Image</button>
+
+    <script>
+        // Track current image state
+        let isFirstImage = true;
+
+        function changeImage() {
+            let img = document.getElementById("myImage");
+
+            if (isFirstImage) {
+                img.setAttribute(
+                    "src",
+                    "https://tse4.mm.bing.net/th/id/OIP.qeXkjS3N8ovfxk6vt0s99wHaFi?pid=Api&P=0&h=180"
+                );
+            } else {
+                img.setAttribute(
+                    "src",
+                    "https://tse4.mm.bing.net/th/id/OIP.nZ2A1izoIcmcU6EFQ2IzdgHaFi?pid=Api&P=0&h=180"
+                );
+            }
+
+            // Toggle state
+            isFirstImage = !isFirstImage;
+        }
+    </script>
+
+</body>
+</html>

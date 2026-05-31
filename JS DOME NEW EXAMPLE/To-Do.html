@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Smart To-Do App</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            margin: 10px auto;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            background: #f2f2f2;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .delete {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Smart To-Do App</h2>
+
+    <input id="taskInput" placeholder="Enter task">
+    <button id="addBtn">Add</button>
+
+    <p>Total Tasks: <span id="count">0</span></p>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        const input = document.getElementById("taskInput");
+        const addBtn = document.getElementById("addBtn");
+        const list = document.getElementById("taskList");
+        const count = document.getElementById("count");
+
+        let taskCount = 0;
+
+        // 🔹 Add Task Function
+        function addTask() {
+            let taskText = input.value.trim();
+            //trim() removes whitespace from both ends of a string. It does not change the original string, but returns a new string with the whitespace removed. This is useful for ensuring that we don't add tasks that are just spaces.
+
+            // Prevent empty input
+            if (taskText === "") return;
+
+            // Create <li>
+            let li = document.createElement("li");
+
+            li.innerHTML = `
+                ${taskText}
+                <button class="delete">X</button>
+            `;
+
+            list.appendChild(li);
+
+            // Update count
+            taskCount++;
+            count.innerText = taskCount;
+
+            // Clear input
+            input.value = "";
+        }
+
+        // 🔹 Button click
+        addBtn.addEventListener("click", addTask);
+
+        // 🔹 Enter key support
+        input.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                addTask();
+            }
+        });
+
+        //SINGLE EVENT LISTENER 
+        //event delegation is used here to handle delete button clicks efficiently. Instead of adding a click event listener to each delete button, we add a single listener to the parent <ul> element. When a click event occurs, we check if the clicked target has the class "delete". If it does, we remove the corresponding <li> and update the task count.
+        list.addEventListener("click", function(e) {
+            if (e.target.classList.contains("delete")) {
+                e.target.parentElement.remove();
+
+                taskCount--;
+                count.innerText = taskCount;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -9,7 +9,7 @@ let employees = [];
 // FUNCTION 1: Add Employee
 // ─────────────────────────────────────────────
 function addEmployee() {
-    let name   = document.getElementById("empName").value.trim();
+    let name   = document.getElementById("empName").value;
     let id     = parseInt(document.getElementById("empId").value);
     let salary = parseFloat(document.getElementById("empSalary").value);
     let dept   = document.getElementById("empDept").value.trim();
